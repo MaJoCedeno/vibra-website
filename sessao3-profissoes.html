@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sessão 3: Profissões | Fofocas com Vibra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Livvic:ital,wght@0,400;0,600;0,700;1,500&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* VIBRA brand palette (from Brand Book) */
+    --cream:#FBF6EC;
+    --paper:#FFFFFF;
+    --azul-deep:#7046B6;   /* brand purple (secondary): used for headings, dark surfaces */
+    --azul-mid:#9B6FD1;    /* lighter purple, for gradients/accents */
+    --azul-pale:#EFE6FA;   /* pale lilac, for soft backgrounds */
+    --terracota:#FF6736;   /* brand orange (secondary) */
+    --mostarda:#FDC848;    /* brand yellow (primary) */
+    --coral:#FF6736;
+    --ink:#2B2530;
+    --ink-soft:#6B6272;
+    --line:rgba(112,70,182,0.16);
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth; font-size:19px;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Quicksand',sans-serif;
+    line-height:1.5;
+  }
+  h1,h2,h3,.display{
+    font-family:'Livvic',sans-serif;
+    font-weight:700;
+    color:var(--azul-deep);
+    margin:0;
+  }
+  .wrap{max-width:920px;margin:0 auto;padding:0 24px;}
+
+  /* ---------- Brand gradient band (purple → orange → yellow, per Brand Book) ---------- */
+  .azulejo-band{
+    height:10px;
+    width:100%;
+    background:linear-gradient(90deg, var(--azul-deep) 0%, var(--terracota) 55%, var(--mostarda) 100%);
+  }
+
+  /* ---------- Hero ---------- */
+  header.hero{
+    background:var(--azul-deep);
+    color:var(--cream);
+    padding:56px 0 64px;
+    position:relative;
+  }
+  .eyebrow{
+    font-size:15px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--mostarda);
+    font-weight:600;
+    margin-bottom:14px;
+  }
+  header.hero h1{
+    color:var(--cream);
+    font-size:clamp(2.1rem, 5vw, 3.2rem);
+    font-weight:700;
+    line-height:1.05;
+  }
+  header.hero p.lead{
+    max-width:560px;
+    margin-top:16px;
+    color:#EAE0F7;
+    font-size:1.05rem;
+  }
+  .agenda{
+    margin-top:36px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+  .agenda a{
+    text-decoration:none;
+    font-size:.82rem;
+    font-weight:600;
+    color:var(--cream);
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.25);
+    padding:8px 14px;
+    border-radius:100px;
+    transition:background .15s ease;
+  }
+  .agenda a:hover, .agenda a:focus-visible{background:rgba(255,255,255,0.2);}
+  .agenda span.n{color:var(--mostarda); margin-right:6px;}
+
+  /* ---------- Sections ---------- */
+  main{padding:56px 0 40px;}
+  section{margin-bottom:72px; scroll-margin-top:24px;}
+  .kicker{
+    display:flex; align-items:baseline; gap:12px; margin-bottom:6px;
+  }
+  .kicker .num{
+    font-family:'Livvic',sans-serif;
+    font-size:1rem;
+    color:var(--terracota);
+    font-weight:600;
+  }
+  section h2{
+    font-size:1.7rem;
+    font-weight:600;
+  }
+  section > .sub{
+    color:var(--ink-soft);
+    margin-top:8px;
+    max-width:620px;
+    font-size:.98rem;
+  }
+  .content-block{margin-top:26px;}
+
+  .card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:22px 24px;
+  }
+
+  /* ---------- Warm-up ---------- */
+  .review-block{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:24px 26px 28px;
+  }
+  .review-title{
+    font-size:1.15rem;
+    margin-bottom:4px;
+  }
+  .review-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:16px;
+  }
+  .review-box{
+    border:2px solid var(--azul-deep);
+    border-radius:8px;
+    padding:16px 18px;
+    font-size:1.05rem;
+    color:var(--ink);
+    background:var(--azul-pale);
+  }
+  @media (max-width:600px){
+    .review-grid{grid-template-columns:1fr;}
+  }
+
+  .warmup-card{
+    background:linear-gradient(135deg, var(--azul-pale), #EEF4F8);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:28px;
+    display:flex;
+    gap:18px;
+    align-items:flex-start;
+  }
+  .warmup-card .mark{
+    font-family:'Livvic',sans-serif;
+    font-size:2.4rem;
+    color:var(--terracota);
+    line-height:1;
+  }
+  .warmup-card p{margin:0; font-size:1.15rem; color:var(--azul-deep); font-family:'Livvic',sans-serif; font-weight:500; font-style:italic;}
+
+  /* ---------- Vocabulary tiles ---------- */
+  .tile-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(150px,1fr));
+    gap:14px;
+  }
+  .tile{
+    perspective:900px;
+    height:132px;
+  }
+  .tile-inner{
+    position:relative;
+    width:100%; height:100%;
+    transform-style:preserve-3d;
+    transition:transform .5s cubic-bezier(.4,.2,.2,1);
+    cursor:pointer;
+  }
+  .tile.flipped .tile-inner{transform:rotateY(180deg);}
+  .tile-face{
+    position:absolute; inset:0;
+    border-radius:10px;
+    backface-visibility:hidden;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center;
+    padding:10px;
+  }
+  .tile-front{
+    background:var(--paper);
+    border:1.5px solid var(--line);
+  }
+  .tile-front .emoji{font-size:1.6rem; margin-bottom:6px;}
+  .tile-front .pt{font-family:'Livvic',sans-serif; font-weight:600; font-size:1rem; color:var(--azul-deep);}
+  .tile-back{
+    background:var(--azul-deep);
+    color:var(--cream);
+    transform:rotateY(180deg);
+  }
+  .tile-back .en{font-weight:700; color:var(--mostarda); font-size:.95rem; margin-bottom:6px;}
+  .tile-back .ex{font-size:.76rem; color:#EAE0F7; line-height:1.35;}
+  .tile-hint{
+    text-align:center; color:var(--ink-soft); font-size:.82rem; margin-top:14px;
+  }
+
+  /* ---------- Proverbs accordion ---------- */
+  .proverb{
+    border:1px solid var(--line);
+    border-radius:10px;
+    background:var(--paper);
+    margin-bottom:10px;
+    overflow:hidden;
+  }
+  .proverb button{
+    width:100%;
+    text-align:left;
+    background:none;
+    border:none;
+    padding:16px 18px;
+    font-family:'Livvic',sans-serif;
+    font-size:1.02rem;
+    font-style:italic;
+    color:var(--azul-deep);
+    cursor:pointer;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+  }
+  .proverb button .plus{
+    flex:none;
+    font-family:'Inter',sans-serif;
+    font-style:normal;
+    color:var(--terracota);
+    font-size:1.2rem;
+    transition:transform .2s ease;
+  }
+  .proverb.open button .plus{transform:rotate(45deg);}
+  .proverb .meaning{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .25s ease;
+    font-size:.92rem;
+    color:var(--ink-soft);
+  }
+  .proverb.open .meaning{max-height:120px;}
+  .proverb .meaning-inner{padding:0 18px 16px;}
+
+  /* ---------- Riddles ---------- */
+  .riddle-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+    gap:16px;
+  }
+  .riddle{
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    background:var(--paper);
+    padding:20px;
+  }
+  .riddle p.q{margin:0 0 14px; font-size:.96rem;}
+  .riddle button{
+    background:var(--azul-deep);
+    color:var(--cream);
+    border:none;
+    padding:8px 14px;
+    border-radius:100px;
+    font-size:.8rem;
+    font-weight:600;
+    cursor:pointer;
+  }
+  .riddle .answer{
+    display:none;
+    margin-top:12px;
+    font-family:'Livvic',sans-serif;
+    font-weight:600;
+    font-size:1.1rem;
+    color:var(--terracota);
+    align-items:center;
+    gap:8px;
+  }
+  .answer-emoji{font-size:1.6rem;}
+  .riddle.revealed .answer{display:flex;}
+  .riddle.revealed button{display:none;}
+
+  /* ---------- Conversation deck ---------- */
+  .deck-wrap{display:flex; flex-direction:column; align-items:center; gap:20px;}
+  .deck-card{
+    width:100%;
+    max-width:520px;
+    min-height:150px;
+    background:linear-gradient(135deg, var(--azul-deep) 0%, var(--terracota) 55%, var(--mostarda) 100%);
+    color:#fff;
+    border-radius:18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:36px 30px;
+    font-family:'Livvic',sans-serif;
+    font-size:1.25rem;
+    font-weight:500;
+    box-shadow:0 12px 30px -14px rgba(112,70,182,0.45);
+  }
+  .deck-controls{display:flex; gap:12px; align-items:center; flex-wrap:wrap; justify-content:center;}
+  .deck-controls button{
+    background:var(--azul-deep);
+    color:var(--cream);
+    border:none;
+    padding:11px 20px;
+    border-radius:100px;
+    font-size:.85rem;
+    font-weight:600;
+    cursor:pointer;
+  }
+  .deck-controls button.secondary{
+    background:transparent;
+    color:var(--azul-deep);
+    border:1.5px solid var(--azul-deep);
+  }
+  .deck-controls .count{font-size:.8rem; color:var(--ink-soft);}
+
+  /* ---------- Facts ---------- */
+  .facts-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:16px;
+  }
+  .fact{
+    border-left:3px solid var(--mostarda);
+    background:var(--paper);
+    border-radius:0 10px 10px 0;
+    padding:16px 18px;
+    font-size:.92rem;
+    color:var(--ink);
+  }
+  .fact b{color:var(--azul-deep); font-family:'Livvic',sans-serif;}
+
+  /* ---------- Pregões ---------- */
+  .pregao-list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px;}
+  .pregao-list li{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:12px 16px;
+    display:flex;
+    justify-content:space-between;
+    gap:14px;
+    flex-wrap:wrap;
+    font-size:.92rem;
+  }
+  .pregao-list .cry{font-family:'Livvic',sans-serif; font-weight:500; font-style:italic; color:var(--azul-deep);}
+  .pregao-list .who{color:var(--ink-soft); font-size:.82rem;}
+
+  /* ---------- Homework ---------- */
+  .homework{
+    background:var(--azul-deep);
+    color:var(--cream);
+    border-radius:var(--radius);
+    padding:32px;
+    display:flex;
+    gap:20px;
+    align-items:flex-start;
+  }
+  .homework .icon{font-size:1.8rem;}
+  .homework h3{color:var(--mostarda); font-size:1.1rem; margin-bottom:8px;}
+  .homework p{margin:0; color:#F1E8FB; font-size:.98rem;}
+
+  footer{
+    text-align:center;
+    padding:30px 0 50px;
+    color:var(--ink-soft);
+    font-size:.82rem;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .tile-inner, .proverb .meaning{transition:none;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Fofocas com Vibra | Português Conversacional</div>
+    <h1>Sessão 3: Profissões</h1>
+    <p class="lead">Uma aula para falar sobre trabalho, rotinas e sonhos profissionais, com vocabulário, expressões, adivinhas e boas conversas de fofoca.</p>
+    <nav class="agenda">
+      <a href="#aquecimento"><span class="n">1</span>Aquecimento</a>
+      <a href="#vocabulario"><span class="n">2</span>Vocabulário</a>
+      <a href="#expressoes"><span class="n">3</span>Expressões</a>
+      <a href="#enigmas"><span class="n">4</span>Adivinhas</a>
+      <a href="#conversa"><span class="n">5</span>Conversa</a>
+      <a href="#curiosidades"><span class="n">6</span>Curiosidades</a>
+      <a href="#trabalho-casa"><span class="n">7</span>Trabalho de casa</a>
+    </nav>
+  </div>
+</header>
+<div class="azulejo-band"></div>
+
+<main class="wrap">
+
+  <section id="aquecimento">
+    <div class="kicker"><span class="num">01</span><h2>Aquecimento</h2></div>
+    <p class="sub">Para começar a aula, cada aluno responde em voz alta, sem pressa, é só para "aquecer" o português.</p>
+
+    <div class="content-block review-block">
+      <h3 class="review-title">Revisão rápida da Sessão 2: A Família</h3>
+      <p class="sub" style="margin-bottom:16px;">Antes de falarmos de profissões, vamos recordar a última sessão. Em pares, respondam:</p>
+      <div class="review-grid">
+        <div class="review-box">Quantos primos tens? O que costumam fazer em conjunto?</div>
+        <div class="review-box">A tua família vive toda no mesmo país?</div>
+        <div class="review-box">Quem costuma cozinhar em tua casa?</div>
+        <div class="review-box">Como se dizem em português: pais, irmãos, avós e primos?</div>
+      </div>
+    </div>
+
+    <div class="content-block warmup-card">
+      <span class="mark">“</span>
+      <p>Qual é o trabalho mais aborrecido do mundo? E o mais difícil? Quais são as profissões mais nobres que existem?</p>
+    </div>
+  </section>
+
+  <section id="vocabulario">
+    <div class="kicker"><span class="num">02</span><h2>Vocabulário: as profissões</h2></div>
+    <p class="sub">Clica em cada azulejo para veres a tradução e um exemplo. Pratica a dizer a frase em voz alta antes de virar.</p>
+    <div class="content-block tile-grid" id="tileGrid"></div>
+    <p class="tile-hint">👆 clica num azulejo para virar</p>
+  </section>
+
+  <section id="expressoes">
+    <div class="kicker"><span class="num">03</span><h2>Expressões populares sobre o trabalho</h2></div>
+    <p class="sub">Tentem adivinhar o significado antes de abrir cada expressão. Depois, perguntem: existe um ditado parecido no vosso país?</p>
+    <div class="content-block" id="proverbList"></div>
+  </section>
+
+  <section id="enigmas">
+    <div class="kicker"><span class="num">04</span><h2>Adivinhas de profissões</h2></div>
+    <p class="sub">Em pares, tentem resolver antes de revelar a resposta.</p>
+    <div class="content-block riddle-grid" id="riddleGrid"></div>
+  </section>
+
+  <section id="conversa">
+    <div class="kicker"><span class="num">05</span><h2>Cartões de conversa</h2></div>
+    <p class="sub">Clica em "próxima pergunta" e responde. Depois, passa a vez a um colega.</p>
+    <div class="content-block deck-wrap">
+      <div class="deck-card" id="deckCard">Clica em "começar" para tirar a primeira pergunta.</div>
+      <div class="deck-controls">
+        <button id="deckBack" class="secondary">← Pergunta anterior</button>
+        <button id="deckNext">Próxima pergunta →</button>
+        <span class="count" id="deckCount"></span>
+      </div>
+    </div>
+  </section>
+
+  <section id="curiosidades">
+    <div class="kicker"><span class="num">06</span><h2>Sabias que…?</h2></div>
+    <p class="sub">Curiosidades sobre profissões para partilhar, e depois perguntar: há alguma profissão no teu país que não existe noutros?</p>
+    <div class="content-block facts-grid" id="factsGrid"></div>
+
+    <div class="content-block card">
+      <h3 style="font-size:1.05rem; margin-bottom:10px;">Os pregões de Lisboa</h3>
+      <p class="sub" style="margin-bottom:14px;">Antes dos supermercados, os vendedores ambulantes anunciavam os seus produtos a cantar pelas ruas. Alguns pregões ainda se ouvem hoje:</p>
+      <ul class="pregao-list" id="pregaoList"></ul>
+      <p class="sub" style="margin-top:14px;">E no teu país, como apregoam os vendedores de rua ou de mercado?</p>
+    </div>
+  </section>
+
+  <section id="trabalho-casa">
+    <div class="kicker"><span class="num">07</span><h2>Trabalho para casa</h2></div>
+    <div class="content-block homework">
+      <span class="icon">🎧</span>
+      <div>
+        <h3>Para a próxima aula</h3>
+        <p>Ouve o fado <b>"Sou do Fado, Sou Fadista"</b>, de Ana Moura (álbum <i>Guarda-me a Vida na Mão</i>, 2003), um dos fados mais tradicionais do seu repertório. Depois, escreve três frases sobre o que sentiste ao ouvir.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>Fofocas com Vibra | Sessão 3 | Profissões e rotinas</footer>
+
+<script>
+  // ---------- Vocabulary tiles ----------
+  const professions = [
+    {pt:"Médico(a)", en:"Médico(a)", emoji:"🩺", ex:"O médico trabalha no hospital."},
+    {pt:"Professor(a)", en:"Profesor(a)", emoji:"📚", ex:"A professora ensina português."},
+    {pt:"Cozinheiro(a)", en:"Cocinero(a)", emoji:"👨‍🍳", ex:"O cozinheiro prepara o jantar."},
+    {pt:"Fadista", en:"Cantante de fado", emoji:"🎤", ex:"A fadista canta no Bairro Alto."},
+    {pt:"Cabeleireiro(a)", en:"Peluquero(a)", emoji:"💇", ex:"Vou ao cabeleireiro cortar o cabelo."},
+    {pt:"Advogado(a)", en:"Abogado(a)", emoji:"⚖️", ex:"O advogado defende o cliente."},
+    {pt:"Pescador(a)", en:"Pescador(a)", emoji:"🎣", ex:"O pescador sai de manhã cedo."},
+    {pt:"Provador(a) de vinhos", en:"Catador(a) de vinos", emoji:"🍷", ex:"O provador avalia o vinho do Porto."},
+    {pt:"Programador(a)", en:"Programador(a)", emoji:"💻", ex:"O programador escreve código."},
+    {pt:"Enfermeiro(a)", en:"Enfermero(a)", emoji:"💉", ex:"A enfermeira cuida dos pacientes."},
+    {pt:"Carteiro", en:"Cartero", emoji:"📮", ex:"O carteiro entrega as cartas."},
+    {pt:"Padeiro(a)", en:"Panadero(a)", emoji:"🥖", ex:"O padeiro faz pão fresco."},
+    {pt:"Varina", en:"Vendedora de pescado", emoji:"🐟", ex:"A varina vendia sardinha em Alfama."},
+    {pt:"Motorista", en:"Conductor(a) / Chofer", emoji:"🚌", ex:"O motorista conduz o autocarro."},
+    {pt:"Bombeiro(a)", en:"Bombero(a)", emoji:"🚒", ex:"O bombeiro apaga o fogo."},
+    {pt:"Azulejador(a)", en:"Artesano(a) de azulejos", emoji:"🎨", ex:"O azulejador pinta azulejos à mão."},
+    {pt:"Cortador(a) de cortiça", en:"Cortador(a) de corcho", emoji:"🌳", ex:"O cortador de cortiça trabalha no Alentejo."},
+    {pt:"Oleiro(a)", en:"Alfarero(a) / Ceramista", emoji:"🏺", ex:"O oleiro faz o Galo de Barcelos."}
+  ];
+
+  const tileGrid = document.getElementById('tileGrid');
+  professions.forEach(p=>{
+    const tile = document.createElement('div');
+    tile.className='tile';
+    tile.innerHTML = `
+      <div class="tile-inner">
+        <div class="tile-face tile-front">
+          <div class="emoji">${p.emoji}</div>
+          <div class="pt">${p.pt}</div>
+        </div>
+        <div class="tile-face tile-back">
+          <div class="en">${p.en}</div>
+          <div class="ex">${p.ex}</div>
+        </div>
+      </div>`;
+    tile.addEventListener('click', ()=> tile.classList.toggle('flipped'));
+    tileGrid.appendChild(tile);
+  });
+
+  // ---------- Proverbs ----------
+  const proverbs = [
+    {q:"O poeta nasce, o advogado faz-se.", a:"A sensibilidade artística é inata; já a advocacia aprende-se com estudo."},
+    {q:"Casa de ferreiro, espeto de pau.", a:"Quem é bom numa profissão, às vezes não usa essa habilidade a seu próprio favor, em casa."},
+    {q:"Amigos, amigos, negócios à parte.", a:"Nos negócios, a amizade não deve interferir nas decisões profissionais."},
+    {q:"Erros de médico, a terra os cobre.", a:"Os erros de um médico podem ter consequências trágicas e irreversíveis."},
+    {q:"O seguro morreu de velho.", a:"Ser prudente e cauteloso, mesmo que pareça exagero, costuma compensar."},
+    {q:"Quem não trabuca, não manduca.", a:"Quem não trabalha, não come. Expressão popular sobre o valor do trabalho."}
+  ];
+
+  const proverbList = document.getElementById('proverbList');
+  proverbs.forEach(p=>{
+    const el = document.createElement('div');
+    el.className='proverb';
+    el.innerHTML = `
+      <button type="button">
+        <span>"${p.q}"</span><span class="plus">+</span>
+      </button>
+      <div class="meaning"><div class="meaning-inner">${p.a}</div></div>`;
+    el.querySelector('button').addEventListener('click', ()=> el.classList.toggle('open'));
+    proverbList.appendChild(el);
+  });
+
+  // ---------- Riddles ----------
+  const riddles = [
+    {q:"Trabalho com fogo, mas não me queimo. Apago o que outros não conseguem. Quem sou eu?", a:"Bombeiro(a)", emoji:"🚒"},
+    {q:"Toda a gente me chama quando algo dói, mas eu nunca sinto a dor de quem trato. Quem sou eu?", a:"Médico(a) / Enfermeiro(a)", emoji:"🩺"},
+    {q:"Viajo o dia todo, mas nunca chego a lado nenhum que seja meu. Quem sou eu?", a:"Motorista / Piloto", emoji:"🚌"},
+    {q:"Escrevo códigos que ninguém vê, mas que fazem tudo funcionar no computador. Quem sou eu?", a:"Programador(a)", emoji:"💻"},
+    {q:"De manhã cedo já estou a trabalhar, para que o pão fresco possas comprar. Quem sou eu?", a:"Padeiro(a)", emoji:"🥖"}
+  ];
+
+  const riddleGrid = document.getElementById('riddleGrid');
+  riddles.forEach(r=>{
+    const el = document.createElement('div');
+    el.className='riddle';
+    el.innerHTML = `
+      <p class="q">${r.q}</p>
+      <button type="button">Revelar resposta</button>
+      <div class="answer"><span class="answer-emoji">${r.emoji}</span> ${r.a}</div>`;
+    el.querySelector('button').addEventListener('click', ()=> el.classList.add('revealed'));
+    riddleGrid.appendChild(el);
+  });
+
+  // ---------- Conversation deck ----------
+  const questions = [
+    "Qual é a tua profissão? Gostas do que fazes? Porquê?",
+    "Qual é a tua profissão de sonho? Porquê?",
+    "Preferes trabalhar ao ar livre ou num escritório? Porquê?",
+    "Na tua opinião, qual é o trabalho mais difícil do mundo?",
+    "Que profissão jamais gostarias de ter? Porquê?",
+    "Enumera três profissões em que é necessário usar farda.",
+    "Em que profissões é preciso trabalhar à noite, aos fins de semana ou aos feriados?",
+    "Achas que os profissionais do desporto têm salários exagerados? Explica porquê.",
+    "Achas que ser cantor(a) é uma profissão exigente? Porquê?",
+    "Se fosses empreendedor(a), que tipo de empresa criarias?",
+    "Quais são, para ti, as profissões mais nobres que existem?",
+    "Como é um dia normal na tua profissão?",
+    "Qual é a profissão mais interessante que alguém da tua família tem?"
+  ];
+
+  let deckOrder = [];
+  let deckIndex = 0;
+  function shuffle(arr){
+    const a=[...arr];
+    for(let i=a.length-1;i>0;i--){
+      const j=Math.floor(Math.random()*(i+1));
+      [a[i],a[j]]=[a[j],a[i]];
+    }
+    return a;
+  }
+  function resetDeck(){
+    deckOrder = shuffle(questions);
+    deckIndex = -1;
+  }
+  resetDeck();
+
+  const deckCard = document.getElementById('deckCard');
+  const deckCount = document.getElementById('deckCount');
+  const deckNext = document.getElementById('deckNext');
+  const deckBack = document.getElementById('deckBack');
+
+  function renderDeck(){
+    deckCard.textContent = deckOrder[deckIndex];
+    deckCount.textContent = `pergunta ${deckIndex+1} de ${deckOrder.length}`;
+  }
+  function showNext(){
+    deckIndex++;
+    if(deckIndex >= deckOrder.length){
+      resetDeck();
+      deckIndex = 0;
+    }
+    renderDeck();
+  }
+  function showPrev(){
+    if(deckIndex <= 0){
+      deckIndex = deckOrder.length - 1;
+    } else {
+      deckIndex--;
+    }
+    renderDeck();
+  }
+  deckNext.addEventListener('click', showNext);
+  deckBack.addEventListener('click', showPrev);
+
+  // ---------- Facts ----------
+  const facts = [
+    "A profissão de <b>padeiro</b> terá surgido por volta do ano 50, durante o Império Romano, quando apareceram as primeiras escolas de padeiros.",
+    "O primeiro <b>cartão de identificação profissional</b> em Portugal foi criado para os motoristas de táxi, no início do século XX.",
+    "Os <b>cabeleireiros</b> da Roma Antiga eram escravos especializados chamados \"tonsores\", e cortar cabelo era considerado uma arte tão importante quanto a medicina.",
+    "Os <b>pescadores</b> da Nazaré tinham uma linguagem própria feita de assobios para se comunicarem à distância no mar, antes de existirem rádios.",
+    "Existe uma profissão chamada \"<b>degustador oficial de vinho do Porto</b>\", cuja função é provar e classificar cada lote antes de ser exportado."
+  ];
+  const factsGrid = document.getElementById('factsGrid');
+  facts.forEach(f=>{
+    const el = document.createElement('div');
+    el.className='fact';
+    el.innerHTML = f;
+    factsGrid.appendChild(el);
+  });
+
+  // ---------- Pregões ----------
+  const pregoes = [
+    {cry:"“Olha a bola de Berlim! Fresquinhas!”", who:"vendedor(a) de bolas de Berlim, comum nas praias portuguesas no verão"},
+    {cry:"“Água, água fresca! Quem quer água?”", who:"vendedor(a) de água na praia"},
+    {cry:"“Castanha quente e boa! Castanha assada!”", who:"castanheira/o, nas ruas de Lisboa e Porto no outono e inverno"},
+    {cry:"“Gelados, sorvetes! Quem quer gelado?”", who:"vendedor(a) ambulante de gelados na praia"},
+    {cry:"“Milho quente! Milho assado!”", who:"vendedor(a) de milho assado em feiras e romarias"},
+    {cry:"“Jornaaal! Últimas notícias!”", who:"vendedor de jornais na rua"}
+  ];
+  const pregaoList = document.getElementById('pregaoList');
+  pregoes.forEach(p=>{
+    const li = document.createElement('li');
+    li.innerHTML = `<span class="cry">${p.cry}</span><span class="who">${p.who}</span>`;
+    pregaoList.appendChild(li);
+  });
+</script>
+
+</body>
+</html>
